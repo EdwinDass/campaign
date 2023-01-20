@@ -6,15 +6,10 @@ import { Injectable } from '@angular/core';
 })
 export class ApiService {
 
-  
+  constructor(private http: HttpClient) { }
 
-  constructor(private http: HttpClient) {
-   
-   }
+  boto(value:any) {
+    this.http.post("http://localhost:6000/bot/form/:id",value).subscribe();
 
-  setCampaign() {
-    return this.http.get(
-     "localhost:6000/bot/" + "form/:id")
-  }
-
+}
 }

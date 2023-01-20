@@ -9,12 +9,12 @@ import { NoAuthGuard } from "./core/guards/no-auth/no-auth.guard";
 import { AuthGuard } from './core/guards/auth/auth.guard';
 
 const routes: Routes = [
-  { path: "", component: LoginPageComponent, canActivate: [NoAuthGuard] },
+  { path: "", component: LoginPageComponent },
   // { path: '**', redirectTo: "/login"},
-  { path: "login",component:LoginPageComponent, canActivate: [NoAuthGuard]},
-  { path: "home", component: HomeViewComponent, canActivate: [AuthGuard] },
-  { path: "create", component: CreateCampaignComponent, canActivate: [AuthGuard] },
-  { path: "summary", component: CampaignSummaryComponent, canActivate: [AuthGuard] }
+  { path: "login",component:LoginPageComponent},
+  { path: "home", component: HomeViewComponent},
+  { path: "create", component: CreateCampaignComponent},
+  { path: "summary", component: CampaignSummaryComponent}
 ];
 
 @NgModule({

@@ -10,7 +10,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CoreModule } from 'src/app/core/core.module';
-
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -25,7 +25,8 @@ import { CoreModule } from 'src/app/core/core.module';
     MatButtonModule,
     MatSelectModule,
     ReactiveFormsModule,
-    CoreModule
+    CoreModule,
+    HttpClientModule
   ]
 })
 export class CampaignModule { }

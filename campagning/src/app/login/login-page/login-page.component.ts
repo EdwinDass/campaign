@@ -37,7 +37,7 @@ console.log("hidbhcbahbsvbs")
       this.mypassword = this.form.get('password')?.value;
 
       if(this.myusername=="edwin@gmail.com" && this.mypassword=="Test$123" ){
-        this.router.navigate(["home"]);
+        this.router.navigate(["create"]);
       }else{
         this.router.navigate(["/login"]);
       }
