@@ -9,7 +9,7 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   boto(value:any) {
-    this.http.post("http://localhost:6000/bot/form/:id",value).subscribe();
+    return this.http.post("http://localhost:6000/bot/form",value);
 
 }
 }

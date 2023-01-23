@@ -34,9 +34,11 @@
                 <div>
                     <input type="file" accept=".csv,.xlsx" id="getFile" formControlName="fileType">
                 </div>
-                <input type="Submit">
+                <input type="Submit" >
             </div>
+           <h3 class="submitting" [innerHTML]="message" style='color:"primary"'></h3>
         </form>
+       
 
     </div>
 </app-layout>

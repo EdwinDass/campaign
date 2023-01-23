@@ -33,7 +33,7 @@ input[type=submit] {
     color: white;
     width: 40%;
     height: 2rem;
-    margin: 2rem 4rem;
+    margin: 1rem 4rem;
 }
 
 
@@ -90,3 +90,11 @@ mat-form-field-flex {
 ::ng-deep  .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
         color: red !important;
     }
+
+
+    .submitting{
+        
+            color:green;
+            padding-left: 18%;
+ 
+}

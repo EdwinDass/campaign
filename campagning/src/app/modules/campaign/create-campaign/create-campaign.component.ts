@@ -12,6 +12,7 @@ import { ApiService } from '../service/api/api.service';
 export class CreateCampaignComponent implements OnInit {
 
   form=new FormGroup({ template_name: new FormControl(),campaign_name: new FormControl(), sheet_id: new FormControl(),  lang: new FormControl(),poster_url:new FormControl(),fileType:new FormControl()});
+  message: any;
 
   constructor(
     private fb: FormBuilder,
@@ -20,6 +21,7 @@ export class CreateCampaignComponent implements OnInit {
 
 }
   ngOnInit(): void {
+    //this.form.template_name='';
    
   }
   
@@ -47,9 +49,11 @@ get posterUrl(): any {
   return this.form.get('poster_url');
 }
 onSubmit(){
-  // this.http.post("http://localhost:6000/bot/form/:id",this.form.value).subscribe();
+  // this.http.post("http://localhost:6000/bot/form/",this.form.value).subscribe();
 
-// this.apiService.boto(this.form.value);
+this.apiService.boto(this.form.value);
  console.log(this.form.value)
+ this.form.reset();
+ this.message ="Campaign Started";
 }
 }

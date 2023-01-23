@@ -1,6 +1,7 @@
 import { Component, Input, ViewChild } from '@angular/core';
 
 import { MatSidenav } from '@angular/material/sidenav';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 
@@ -14,6 +15,8 @@ export class LayoutComponent {
   logochange: boolean | undefined;
   sidenavWidth = 5;
   @Input() sidenav!: MatSidenav;
+
+  constructor(private router: Router){}
 
   routes: {
     title: string;
@@ -32,5 +35,7 @@ export class LayoutComponent {
   toggleMenu() {
     this.sidenav.toggle();
   }
-  logout(){}
+  logout(){
+    this.router.navigate(["/login"]);
+  }
 }
