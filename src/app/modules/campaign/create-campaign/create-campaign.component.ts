@@ -88,9 +88,9 @@ export class CreateCampaignComponent implements OnInit {
   //   return this.form.get('campaign_name');
   // }
   
-  get posterUrl(): any {
-    return this.form.get('poster_url');
-  }
+  // get posterUrl(): any {
+  //   return this.form.get('postrl');
+  // }
 
   onFileChange(event: any) {
 
