@@ -89,7 +89,7 @@ export class CreateCampaignComponent implements OnInit {
   // }
   
   // get posterUrl(): any {
-  //   return this.form.get('poster_url');
+  //   return this.form.get('postrl');
   // }
 
   onFileChange(event: any) {
@@ -109,6 +109,8 @@ export class CreateCampaignComponent implements OnInit {
     formData.append("posterurl", this.form.value.poster_url);
     formData.append("uploadFile", this.uploadFile);
     this.http.post("http://localhost:6000/bot/form/",formData).subscribe();
+
+    //wruovhqierbvqi
     // console.log("dvqev",formData.get(""));
     
     // (formData.forEach((r)=>console.log(r)));
