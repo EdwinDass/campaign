@@ -22,7 +22,7 @@ export class CreateCampaignComponent implements OnInit {
 
   posterurl: string="jhvsjhcv";
 
-  uploadFile! : File;
+  uploadFile : File | undefined;
 
   message: any;
 
@@ -104,18 +104,25 @@ export class CreateCampaignComponent implements OnInit {
 
 
   onSubmit() {
-    var formData= new FormData();
+    if(this.form.value.sheet_id==""||this.form.value.campaign_name==""||  this.form.value.template_name=="" ||this.form.value.lang=="" ||this.form.value.poster_url=="" || this.uploadFile==undefined){
+      alert("please Fill all the details")
+    }else{
+    var formData: FormData= new FormData();
     formData.append("sheetid", this.form.value.sheet_id);
     formData.append("campaignname", this.form.value.campaign_name);
     formData.append("templatname", this.form.value.template_name);
+    formData.append("Language", this.form.value.lang);
     formData.append("posterurl", this.form.value.poster_url);
     formData.append("uploadFile", this.uploadFile);
+    // console.log((formData.forEach((r)=>console.log(r))));
     this.http.post("http://localhost:6000/bot/form/",formData).subscribe();
     // console.log("dvqev",formData.get(""));
     
     // (formData.forEach((r)=>console.log(r)));
 
     // this.apiService.boto(formData).subscribe();
+    alert("submitted")
+    }
 
   }
 }

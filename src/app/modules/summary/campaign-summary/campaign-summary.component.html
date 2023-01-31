@@ -19,7 +19,7 @@
 
     <ng-container matColumnDef="id">
       <th mat-header-cell *matHeaderCellDef>
-        Template ID
+        Template Name
       </th>
       <td mat-cell *matCellDef="let element">
         {{ element && element.gstin ? element.gstin : "" }}
@@ -33,14 +33,14 @@
         </th>
         <td mat-cell *matCellDef="let element">
           {{ element && element.gstin ? element.gstin : "" }}
-         <button  mat-mini-fab  aria-label="Example icon button with a delete icon" class="btn-view"><mat-icon>open_in_new</mat-icon></button>
+         <button  mat-mini-fab (click)="openLink()" aria-label="Example icon button with a delete icon" ><mat-icon>open_in_new</mat-icon></button>
         </td>
       </ng-container>
 
 
       <ng-container matColumnDef="count">
         <th mat-header-cell *matHeaderCellDef>
-         Receipt Count
+         Number Of Recipients
         </th>
         <td mat-cell *matCellDef="let element">
           {{ element && element.gstin ? element.gstin : "" }}

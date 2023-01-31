@@ -21,10 +21,11 @@
                 <mat-form-field appearance="outline">
                     <mat-label >Language</mat-label>
                     <mat-select formControlName="lang">
-                        <mat-option value="English">English </mat-option>
-                        <mat-option value="Kannada"> Kannada</mat-option>
-                        <mat-option value="Hindi"> Hindi </mat-option>
-                        <mat-option value="Tamil"> Tamil </mat-option>
+                        <mat-option value="en">English </mat-option>
+                        <mat-option value="kn"> Kannada</mat-option>
+                        <mat-option value="Hi"> Hindi </mat-option>
+                        <mat-option value="ta"> Tamil </mat-option>
+                        <mat-option value="te"> Telugu </mat-option>
                     </mat-select>
                 </mat-form-field>
                 <mat-form-field appearance="outline">
@@ -32,7 +33,13 @@
                     <input matInput formControlName="poster_url">
                 </mat-form-field>
                 <div>
-                    <input type="file" accept=".csv,.xlsx" id="getFile" formControlName="fileType">
+                    <input
+                    type="file"
+                    accept=".csv , xlxs"
+                    (change)="onFileChange($event)"
+                    placeholder="Upload File"
+                  />
+                   
                 </div>
                 <input type="Submit" >
             </div>
