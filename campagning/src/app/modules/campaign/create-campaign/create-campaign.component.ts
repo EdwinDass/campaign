@@ -104,6 +104,9 @@ export class CreateCampaignComponent implements OnInit {
 
 
   onSubmit() {
+     if(this.form.value.sheet_id==""||this.form.value.campaign_name==""||  this.form.value.template_name=="" ||this.form.value.lang=="" ||this.form.value.poster_url=="" || this.uploadFile==undefined){
+      alert("please Fill all the details")
+    }else{
     var formData= new FormData();
     formData.append("sheetid", this.form.value.sheet_id);
     formData.append("campaignname", this.form.value.campaign_name);
@@ -116,6 +119,8 @@ export class CreateCampaignComponent implements OnInit {
     // (formData.forEach((r)=>console.log(r)));
 
     // this.apiService.boto(formData).subscribe();
+       alert("submitted")
+    }
 
   }
 }
