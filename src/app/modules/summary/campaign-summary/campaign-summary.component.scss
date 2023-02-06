@@ -1,0 +1,44 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+ng-container{
+    margin:0px;
+    padding:0px;
+
+}
+
+table{
+    position:relative;
+    top:10%;
+}
+.tab{
+    width:90%;
+    padding-left:5%;
+    padding-top:10%;
+}
+  .mat-mdc-table thead, .mat-mdc-header-row, .mat-mdc-header-cell {
+    font-size: 14px;
+    background: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+  }
+
+  .mdc-data-table__row:last-child .mdc-data-table__cell{
+    background-color: rgb(244, 244, 244);
+  }
+
+
+  .btn-view {
+    background: black;
+    color: white;
+    margin-left: 5px;
+    margin-right: 5px;
+    box-shadow: none;
+    border-radius: 100%;
+    width:35px;
+  }
+
+  .mat-mdc-mini-fab.mat-accent{
+    color:white;
+    background-color: black;
+  }

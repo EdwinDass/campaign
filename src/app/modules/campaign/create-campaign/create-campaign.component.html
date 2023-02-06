@@ -1,0 +1,51 @@
+
+<app-layout >
+    <h1 style="padding:5% 0% 5% 35%;">New Campaign</h1>
+    <div class="items">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="edwin">
+                <mat-form-field appearance="outline" >
+                    <mat-label>Sheet ID</mat-label>
+                    <input matInput formControlName="sheet_id" style="line-height: 14px;height: 14px;">
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Campaign Name</mat-label>
+                    <input matInput formControlName="campaign_name">
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Template Name</mat-label>
+                    <input matInput formControlName="template_name">
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label >Language</mat-label>
+                    <mat-select formControlName="lang">
+                        <mat-option value="en">English </mat-option>
+                        <mat-option value="kn"> Kannada</mat-option>
+                        <mat-option value="Hi"> Hindi </mat-option>
+                        <mat-option value="ta"> Tamil </mat-option>
+                        <mat-option value="te"> Telugu </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Poster URL</mat-label>
+                    <input matInput formControlName="poster_url">
+                </mat-form-field>
+                <div>
+                    <input
+                    type="file"
+                    accept=".csv , xlxs"
+                    (change)="onFileChange($event)"
+                    placeholder="Upload File"
+                  />
+                   
+                </div>
+                <input type="Submit" >
+            </div>
+           <h3 class="submitting" [innerHTML]="message" style='color:"primary"'></h3>
+        </form>
+       
+
+    </div>
+</app-layout>
