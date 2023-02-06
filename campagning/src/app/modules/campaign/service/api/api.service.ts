@@ -9,7 +9,6 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   boto(value:any) {
-    return this.http.post("http://localhost:6000/bot/form",value);
-
+    return this.http.post("http://localhost:6001/bot/trigger",value);
 }
 }

@@ -21,8 +21,6 @@ export class LoginPageComponent {
     private fb: FormBuilder,
     private router: Router,
   ) {
-
-    // this.form = this.fb.group({ username: '',password:'' });
   }
     ngOnInit(): void {
 
@@ -32,17 +30,14 @@ export class LoginPageComponent {
       });
     }
     onSubmit(){
-console.log("hidbhcbahbsvbs")
       this.myusername = this.form.get('email')?.value;
       this.mypassword = this.form.get('password')?.value;
 
-      if(this.myusername=="edwin@gmail.com" && this.mypassword=="Test$123" ){
-        this.router.navigate(["create"]);
+      if(this.myusername=="ritika.singh@xuriti.com" && this.mypassword=="test@123" ){
+        this.router.navigate(["home"]);
       }else{
         this.router.navigate(["/login"]);
+        alert("Please Enter Valid Credentials!");
       }
-
     }
-
 }
-

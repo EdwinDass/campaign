@@ -1,12 +1,12 @@
 
 <app-layout >
-    <h1 style="padding:5% 0% 5% 35%;">New Campaign</h1>
+    <h1 style="padding:1% 0% 5% 35%;">New Campaign</h1>
     <div class="items">
         <form [formGroup]="form" (ngSubmit)="onSubmit()">
             <div class="edwin">
                 <mat-form-field appearance="outline" >
-                    <mat-label>Sheet ID</mat-label>
-                    <input matInput formControlName="sheet_id" style="line-height: 14px;height: 14px;">
+                    <mat-label>Sheet Name</mat-label>
+                    <input matInput formControlName="sheet_name" style="line-height: 14px;height: 14px;">
                 </mat-form-field>
 
                 <mat-form-field appearance="outline">
@@ -21,10 +21,11 @@
                 <mat-form-field appearance="outline">
                     <mat-label >Language</mat-label>
                     <mat-select formControlName="lang">
-                        <mat-option value="English">English </mat-option>
-                        <mat-option value="Kannada"> Kannada</mat-option>
-                        <mat-option value="Hindi"> Hindi </mat-option>
-                        <mat-option value="Tamil"> Tamil </mat-option>
+                        <mat-option value="en">English </mat-option>
+                        <mat-option value="kn"> Kannada</mat-option>
+                        <mat-option value="hi"> Hindi </mat-option>
+                        <mat-option value="ta"> Tamil </mat-option>
+                        <mat-option value="te"> Telugu </mat-option>
                     </mat-select>
                 </mat-form-field>
                 <mat-form-field appearance="outline">
@@ -32,9 +33,9 @@
                     <input matInput formControlName="poster_url">
                 </mat-form-field>
                 <div>
-                    <input type="file" accept=".csv,.xlsx" id="getFile" formControlName="fileType">
+                    <input type="file" accept=".csv,.xlsx" id="getFile" name="myFile"  (change)="onFileChange($event)" >
                 </div>
-                <input type="Submit" >
+                <input type="Submit" value="Start Campaign" >
             </div>
            <h3 class="submitting" [innerHTML]="message" style='color:"primary"'></h3>
         </form>

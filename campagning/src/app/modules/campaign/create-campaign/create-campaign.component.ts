@@ -1,4 +1,3 @@
-
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
@@ -14,13 +13,13 @@ export class CreateCampaignComponent implements OnInit {
 
   form!: FormGroup;
 
-  sheetid  : string="dhicvbqhs";
+  sheetname!  : String;
 
-  campaignname: string="scbhWS";
+  campaignname!: string;
 
-  templatname : string="SCHBSC";
+  templatname! : string;
 
-  posterurl: string="jhvsjhcv";
+  posterurl!: string;
 
   uploadFile! : File;
 
@@ -37,59 +36,14 @@ export class CreateCampaignComponent implements OnInit {
   ngOnInit(): void {
     // this.form.template_name='';
     this.form = this.fb.group({
-      sheet_id: [""],
-      campaign_name: ["", ],
-      template_name: ["", ],
-      lang: ["", ],
-      poster_url: ["", ],
+      sheet_name: ["",[Validators.pattern, Validators.required]],
+      campaign_name: ["", [Validators.pattern, Validators.required]],
+      template_name: ["",[Validators.pattern, Validators.required] ],
+      lang: ["",[Validators.pattern, Validators.required] ],
+      poster_url: ["",[Validators.pattern, Validators.required] ],
     });
   }
-
-
-  
-  //   onSubmit() {
-  //     // this.http.post("http://localhost:6000/bot/form/",this.form.value).subscribe();
-
-  //     // this.apiService.boto(this.form.value);
-  //     //  console.log(this.form.value)
-  //     //  this.form.reset();
-  //     //  this.message ="Campaign Started";
-  //     console.log(this.form);
-  //     if (
-  //       this.uploadFile ||
-  //       !this.uploadFile == null ||
-  //       !this.uploadFile == undefined
-  //     ) {
-  //       // const formData: FormData = new FormData();
-  //       // formData.append("template_name", this.form.data.template_name);
-  //       // formData.append("sellerid", this.sellerid);
-  //     }
-
-
-  //   }
-
-
-  // get sheet_id(): any {
-  //   return this.form.get('sheet_id');
-  // }
-  // get template_name(): any {
-  //   return this.form.get('rollno');
-  // }
-  // get lang(): any {
-  //   return this.form.get('lang');
-  // }
-
-  // get fileType(): any {
-  //   return this.form.get('fileType');
-  // }
-
-  // get campaignName(): any {
-  //   return this.form.get('campaign_name');
-  // }
-  
-  // get posterUrl(): any {
-  //   return this.form.get('poster_url');
-  // }
+ 
    ps(){
 
   }
@@ -100,23 +54,22 @@ export class CreateCampaignComponent implements OnInit {
     this.uploadFile = file;
   }
 
-
-
-
   onSubmit() {
-    var formData= new FormData();
-    formData.append("sheetid", this.form.value.sheet_id);
+    if(this.form.value.sheet_id==""||this.form.value.campaign_name==""||  this.form.value.template_name=="" ||this.form.value.lang=="" ||this.form.value.poster_url=="" || this.uploadFile==undefined){
+      alert("please Fill all the details")
+    }else{
+    var formData: FormData= new FormData();
+    formData.append("sheetname", this.form.value.sheet_name);
     formData.append("campaignname", this.form.value.campaign_name);
     formData.append("templatname", this.form.value.template_name);
+    formData.append("language", this.form.value.lang);
     formData.append("posterurl", this.form.value.poster_url);
-    formData.append("uploadFile", this.uploadFile);
-    this.http.post("http://localhost:6000/bot/form/",formData).subscribe();
-    // console.log("dvqev",formData.get(""));
-    
-    // (formData.forEach((r)=>console.log(r)));
-
-    // this.apiService.boto(formData).subscribe();
-
-  }
+    formData.append("myFile", this.uploadFile);
+    this.http.post("http://localhost:6001/bot/trigger",formData).subscribe();
+    console.log("hweuighuqe",this.form.value.sheet_name);
+    alert("Campaign Started!")
+    this.form.reset();
+    }
 }
 
+}
